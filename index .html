@@ -1712,6 +1712,28 @@
     .mega-menu { display: none; }
   }
 
+
+  /* ── MINIATURES VIDÉO ─────────────────────────── */
+  .yt-facade:hover .yt-thumb {
+    transform: scale(1.04);
+    filter: saturate(1) brightness(0.9);
+  }
+  .yt-facade:hover .yt-play-btn {
+    transform: scale(1.12);
+    background: rgba(232,201,122,1) !important;
+    box-shadow: 0 0 0 14px rgba(201,163,85,0.22) !important;
+  }
+  .yt-facade .yt-play-btn {
+    animation: play-pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes play-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201,163,85,0.45); }
+    50%       { box-shadow: 0 0 0 12px rgba(201,163,85,0); }
+  }
+  .yt-facade.loading .yt-play-btn {
+    animation: none;
+    opacity: 0.5;
+  }
 </style>
 </head>
 <body>
@@ -1820,13 +1842,24 @@
   <div id="videos-reportages" style="display:none;">
 
   <div class="report-featured">
-    <div class="video-shell">
-      <iframe
-        src="https://www.youtube.com/embed/twwmXBq3Fe4?vq=hd1080&rel=0&modestbranding=1"
-        title="Portrait Sallah Dine"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/twwmXBq3Fe4?vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="twwmXBq3Fe4" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/twwmXBq3Fe4/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/twwmXBq3Fe4/hqdefault.jpg'"
+        alt="Portrait Sallah Dine"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Portrait Sallah Dine</div>
+      </div>
     </div>
     <div>
       <div class="report-number">01</div>
@@ -1853,13 +1886,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe
-        src="https://www.youtube.com/embed/PPHYRPCPu1w?vq=hd1080&rel=0&modestbranding=1"
-        title="Fifi Joli Pois — boutique DIY bijoux"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/PPHYRPCPu1w?vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="PPHYRPCPu1w" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/PPHYRPCPu1w/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/PPHYRPCPu1w/hqdefault.jpg'"
+        alt="Fifi Joli Pois — boutique DIY bijoux"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Fifi Joli Pois — boutique DIY bijoux</div>
+      </div>
     </div>
     <div>
       <div class="report-number">02</div>
@@ -1886,13 +1930,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe
-        src="https://www.youtube.com/embed/1W-lx3SqznY?vq=hd1080&rel=0&modestbranding=1"
-        title="Suzon — la friperie chic des Carmes"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/1W-lx3SqznY?vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="1W-lx3SqznY" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/1W-lx3SqznY/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/1W-lx3SqznY/hqdefault.jpg'"
+        alt="Suzon — la friperie chic des Carmes"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Suzon — la friperie chic des Carmes</div>
+      </div>
     </div>
     <div>
       <div class="report-number">03</div>
@@ -1919,13 +1974,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe
-        src="https://www.youtube.com/embed/gC0HZ4urymE?vq=hd1080&rel=0&modestbranding=1"
-        title="Miroir Miroir — expo éphémère Toulouse"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/gC0HZ4urymE?vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="gC0HZ4urymE" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/gC0HZ4urymE/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/gC0HZ4urymE/hqdefault.jpg'"
+        alt="Miroir Miroir — expo éphémère Toulouse"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Miroir Miroir — expo éphémère Toulouse</div>
+      </div>
     </div>
     <div>
       <div class="report-number">04</div>
@@ -1952,15 +2018,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe
-        src="https://www.youtube.com/embed/bCakiYf7hNs?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1"
-        title="La première superette créative de Toulouse"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/bCakiYf7hNs?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="bCakiYf7hNs" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/bCakiYf7hNs/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/bCakiYf7hNs/hqdefault.jpg'"
+        alt="La première superette créative de Toulouse"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">La première superette créative de Toulouse</div>
+      </div>
     </div>
     <div>
       <div class="report-number">05</div>
@@ -1987,15 +2062,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe
-        src="https://www.youtube.com/embed/1Ydl2Xuwiq4?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1"
-        title="Le temple du streetwear"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/1Ydl2Xuwiq4?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="1Ydl2Xuwiq4" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/1Ydl2Xuwiq4/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/1Ydl2Xuwiq4/hqdefault.jpg'"
+        alt="Le temple du streetwear"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Le temple du streetwear</div>
+      </div>
     </div>
     <div>
       <div class="report-number">06</div>
@@ -2022,15 +2106,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe
-        src="https://www.youtube.com/embed/Odh7oEYcgwI?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1"
-        title="Interview Bi Ethic À La Toulouse Fashion Week"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/Odh7oEYcgwI?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="Odh7oEYcgwI" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/Odh7oEYcgwI/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/Odh7oEYcgwI/hqdefault.jpg'"
+        alt="Interview Bi Ethic À La Toulouse Fashion Week"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Interview Bi Ethic À La Toulouse Fashion Week</div>
+      </div>
     </div>
     <div>
       <div class="report-number">07</div>
@@ -2053,15 +2146,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe
-        src="https://www.youtube.com/embed/_4ZOD902uCQ?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1"
-        title="Interview Ton'yes Fashion Week De Toulouse"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/_4ZOD902uCQ?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="_4ZOD902uCQ" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/_4ZOD902uCQ/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/_4ZOD902uCQ/hqdefault.jpg'"
+        alt="Interview Ton'yes Fashion Week De Toulouse"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Interview Ton'yes Fashion Week De Toulouse</div>
+      </div>
     </div>
     <div>
       <div class="report-number">08</div>
@@ -2084,15 +2186,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe
-        src="https://www.youtube.com/embed/TM-CCpUGvig?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1"
-        title="Backstage Blue Jay au Bikini"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/TM-CCpUGvig?list=PLxvLyN_4vyzEQRB9onCgfL_2QQw_JEjWC&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="TM-CCpUGvig" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/TM-CCpUGvig/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/TM-CCpUGvig/hqdefault.jpg'"
+        alt="Backstage Blue Jay au Bikini"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Backstage Blue Jay au Bikini</div>
+      </div>
     </div>
     <div>
       <div class="report-number">09</div>
@@ -2124,8 +2235,24 @@
   <div id="videos-restauration" style="display:none;">
 
   <div class="report-featured">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/utEDHHdUJ8k?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1" title="Matsuya" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/utEDHHdUJ8k?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="utEDHHdUJ8k" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/utEDHHdUJ8k/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/utEDHHdUJ8k/hqdefault.jpg'"
+        alt="Matsuya"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Matsuya</div>
+      </div>
     </div>
     <div>
       <div class="report-number">01</div>
@@ -2143,8 +2270,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/V2tihwtSRig?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1" title="Vésubio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/V2tihwtSRig?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="V2tihwtSRig" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/V2tihwtSRig/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/V2tihwtSRig/hqdefault.jpg'"
+        alt="Vésubio"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Vésubio</div>
+      </div>
     </div>
     <div>
       <div class="report-number">02</div>
@@ -2162,8 +2305,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/N7-vCbdVGJI?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1" title="Le QG" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/N7-vCbdVGJI?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="N7-vCbdVGJI" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/N7-vCbdVGJI/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/N7-vCbdVGJI/hqdefault.jpg'"
+        alt="Le QG"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Le QG</div>
+      </div>
     </div>
     <div>
       <div class="report-number">03</div>
@@ -2181,8 +2340,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/2xg-lA2ZIAg?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1" title="Tinto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/2xg-lA2ZIAg?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="2xg-lA2ZIAg" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/2xg-lA2ZIAg/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/2xg-lA2ZIAg/hqdefault.jpg'"
+        alt="Tinto"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Tinto</div>
+      </div>
     </div>
     <div>
       <div class="report-number">04</div>
@@ -2200,8 +2375,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/nL66eG9U9VY?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1" title="L'Oiseau Vert" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/nL66eG9U9VY?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="nL66eG9U9VY" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/nL66eG9U9VY/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/nL66eG9U9VY/hqdefault.jpg'"
+        alt="L'Oiseau Vert"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">L'Oiseau Vert</div>
+      </div>
     </div>
     <div>
       <div class="report-number">05</div>
@@ -2219,8 +2410,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/1vs37bMEkjo?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1" title="Crush" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/1vs37bMEkjo?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="1vs37bMEkjo" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/1vs37bMEkjo/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/1vs37bMEkjo/hqdefault.jpg'"
+        alt="Crush"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Crush</div>
+      </div>
     </div>
     <div>
       <div class="report-number">06</div>
@@ -2238,8 +2445,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/Fw7pn6myYhg?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1" title="Senu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/Fw7pn6myYhg?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="Fw7pn6myYhg" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/Fw7pn6myYhg/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/Fw7pn6myYhg/hqdefault.jpg'"
+        alt="Senu"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Senu</div>
+      </div>
     </div>
     <div>
       <div class="report-number">07</div>
@@ -2265,8 +2488,24 @@
   <div id="videos-concerts" style="display:none;">
 
   <div class="report-featured">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/F1oI_Qm4cos?list=PLxvLyN_4vyzFKotBmMjprZgJmFgoMIQU2&vq=hd1080&rel=0&modestbranding=1" title="Claude à La Cabane" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/F1oI_Qm4cos?list=PLxvLyN_4vyzFKotBmMjprZgJmFgoMIQU2&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="F1oI_Qm4cos" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/F1oI_Qm4cos/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/F1oI_Qm4cos/hqdefault.jpg'"
+        alt="Claude à La Cabane"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Claude à La Cabane</div>
+      </div>
     </div>
     <div>
       <div class="report-number">01</div>
@@ -2283,8 +2522,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/Wy4E1bI2HfU?list=PLxvLyN_4vyzFKotBmMjprZgJmFgoMIQU2&vq=hd1080&rel=0&modestbranding=1" title="Toulouse Est En Feu Au Rex" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/Wy4E1bI2HfU?list=PLxvLyN_4vyzFKotBmMjprZgJmFgoMIQU2&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="Wy4E1bI2HfU" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/Wy4E1bI2HfU/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/Wy4E1bI2HfU/hqdefault.jpg'"
+        alt="Toulouse Est En Feu Au Rex"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Toulouse Est En Feu Au Rex</div>
+      </div>
     </div>
     <div>
       <div class="report-number">02</div>
@@ -2301,8 +2556,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/u6N6aQu8fsE?list=PLxvLyN_4vyzFKotBmMjprZgJmFgoMIQU2&vq=hd1080&rel=0&modestbranding=1" title="Audition Les Inouïes Printemps De Bourges 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/u6N6aQu8fsE?list=PLxvLyN_4vyzFKotBmMjprZgJmFgoMIQU2&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="u6N6aQu8fsE" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/u6N6aQu8fsE/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/u6N6aQu8fsE/hqdefault.jpg'"
+        alt="Audition Les Inouïes Printemps De Bourges 2024"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Audition Les Inouïes Printemps De Bourges 2024</div>
+      </div>
     </div>
     <div>
       <div class="report-number">03</div>
@@ -2320,8 +2591,24 @@
 
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/ISL1WYVRR2o?vq=hd1080&rel=0&modestbranding=1" title="La Planque au Mad Bar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/ISL1WYVRR2o?vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="ISL1WYVRR2o" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/ISL1WYVRR2o/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/ISL1WYVRR2o/hqdefault.jpg'"
+        alt="La Planque au Mad Bar"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">La Planque au Mad Bar</div>
+      </div>
     </div>
     <div>
       <div class="report-number">04</div>
@@ -2338,8 +2625,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell video-shell--vertical">
-      <iframe src="https://www.youtube.com/embed/SaFFrsXqfS4?vq=hd1080&rel=0&modestbranding=1" title="Aftermovie Sara & Lilo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell video-shell--vertical yt-facade" data-src="https://www.youtube.com/embed/SaFFrsXqfS4?vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="SaFFrsXqfS4" style="position:relative;cursor:pointer;aspect-ratio:9/16;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/SaFFrsXqfS4/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/SaFFrsXqfS4/hqdefault.jpg'"
+        alt="Aftermovie Sara & Lilo"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Aftermovie Sara & Lilo</div>
+      </div>
     </div>
     <div>
       <div class="report-number">05</div>
@@ -2365,8 +2668,24 @@
   <div id="videos-capsules" style="display:none;">
 
   <div class="report-featured">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/FkKxh1oyM70?vq=hd1080&rel=0&modestbranding=1" title="Octobre Rose 2025 — Course caritative" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/FkKxh1oyM70?vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="FkKxh1oyM70" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/FkKxh1oyM70/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/FkKxh1oyM70/hqdefault.jpg'"
+        alt="Octobre Rose 2025 — Course caritative"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Octobre Rose 2025 — Course caritative</div>
+      </div>
     </div>
     <div>
       <div class="report-number">01</div>
@@ -2383,8 +2702,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell video-shell--vertical">
-      <iframe src="https://www.youtube.com/embed/_o6SJQQiFME?vq=hd1080&rel=0&modestbranding=1" title="Les tournesols sont tristes — vernissage du court de Sara" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell video-shell--vertical yt-facade" data-src="https://www.youtube.com/embed/_o6SJQQiFME?vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="_o6SJQQiFME" style="position:relative;cursor:pointer;aspect-ratio:9/16;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/_o6SJQQiFME/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/_o6SJQQiFME/hqdefault.jpg'"
+        alt="Les tournesols sont tristes — vernissage du court de Sara"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Les tournesols sont tristes — vernissage du court de Sara</div>
+      </div>
     </div>
     <div>
       <div class="report-number">02</div>
@@ -2401,8 +2736,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell video-shell--vertical">
-      <iframe src="https://www.youtube.com/embed/YeApoUBQ2Yk?vq=hd1080&rel=0&modestbranding=1" title="Seven Sisters — soirée drag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell video-shell--vertical yt-facade" data-src="https://www.youtube.com/embed/YeApoUBQ2Yk?vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="YeApoUBQ2Yk" style="position:relative;cursor:pointer;aspect-ratio:9/16;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/YeApoUBQ2Yk/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/YeApoUBQ2Yk/hqdefault.jpg'"
+        alt="Seven Sisters — soirée drag"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Seven Sisters — soirée drag</div>
+      </div>
     </div>
     <div>
       <div class="report-number">03</div>
@@ -2419,8 +2770,24 @@
   </div>
 
   <div class="report-featured report-featured--bordered">
-    <div class="video-shell">
-      <iframe src="https://www.youtube.com/embed/c-7vMIRXNN4?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1" title="Aftermovie au Bellini" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-shell yt-facade" data-src="https://www.youtube.com/embed/c-7vMIRXNN4?list=PLxvLyN_4vyzGDhbIcVk9mhfhOJYNZftXZ&vq=hd1080&rel=0&modestbranding=1&autoplay=1" data-vid="c-7vMIRXNN4" style="position:relative;cursor:pointer;aspect-ratio:16/9;background:#0a0806;overflow:hidden;">
+      <img
+        src="https://i.ytimg.com/vi/c-7vMIRXNN4/maxresdefault.jpg"
+        onerror="this.src='https://i.ytimg.com/vi/c-7vMIRXNN4/hqdefault.jpg'"
+        alt="Aftermovie au Bellini"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease, filter .5s ease;filter:saturate(0.8) brightness(0.75);"
+        class="yt-thumb"
+      >
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,163,85,0.12) 0%,transparent 55%,rgba(0,0,0,0.55) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div class="yt-play-btn" style="width:68px;height:68px;border-radius:50%;background:rgba(201,163,85,0.92);display:flex;align-items:center;justify-content:center;transition:transform .3s ease, background .3s ease, box-shadow .3s ease;box-shadow:0 0 0 0 rgba(201,163,85,0.5);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e1a14" style="margin-left:4px;"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,transparent 100%);">
+        <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,163,85,0.7);margin-bottom:4px;font-family:'DM Sans',sans-serif;">▶ Regarder</div>
+        <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:14px;color:rgba(240,235,224,0.9);line-height:1.3;">Aftermovie au Bellini</div>
+      </div>
     </div>
     <div>
       <div class="report-number">04</div>
@@ -3749,5 +4116,31 @@ window.addEventListener('hashchange', routeFromHash);
 window.addEventListener('popstate', routeFromHash);
 </script>
 
+
+<script>
+// ── Chargement des vidéos au clic sur la miniature ──────────────────
+document.addEventListener('click', function(e) {
+  var facade = e.target.closest('.yt-facade');
+  if (!facade) return;
+  facade.classList.add('loading');
+  var src = facade.getAttribute('data-src');
+  var isVertical = facade.classList.contains('video-shell--vertical');
+  var iframe = document.createElement('iframe');
+  iframe.src = src;
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+  iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;z-index:10;';
+  // Shimmer skeleton
+  facade.classList.add('loaded');
+  iframe.addEventListener('load', function() {
+    facade.classList.add('loaded');
+  });
+  facade.appendChild(iframe);
+  // Hide overlay elements
+  facade.querySelectorAll('img, div').forEach(function(el) {
+    if (el !== iframe) el.style.pointerEvents = 'none';
+  });
+});
+</script>
 </body>
 </html>
